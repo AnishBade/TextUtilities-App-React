@@ -5,8 +5,8 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React,{useState} from 'react'
 import {
-  BrowserRouter as Router,
-  Switch,
+  BrowserRouter,
+  Routes,
   Route,
   Link,
 } from "react-router-dom";
@@ -40,22 +40,19 @@ function App() {
   }
   return (
     <>
-    <Router>
+    <BrowserRouter>
       <Navbar title="textUtils" mode={mode} toggleMode={toggleMode}/>
       <Alert alert={alert}/>
       <div className="container my-3">
-        <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
+        <Routes>
             
-            <Route path="/">
-              <TextForm showAlert={showAlert} heading="Enter your text to analyze" mode={mode}/>
-            </Route>
-        </Switch>
+            <Route path="/about" element={<About />} />
+            <Route path="/" element={<TextForm showAlert={showAlert} heading="Enter your text to analyze" mode={mode}/>} />
+           
+        </Routes>
         
       </div>
-    </Router>
+    </BrowserRouter>
       
       
     </>
