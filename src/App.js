@@ -41,7 +41,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
-      <Navbar title="textUtils" mode={mode} toggleMode={toggleMode}/>
+      <Navbar title="textUtils-Anish" mode={mode} toggleMode={toggleMode}/>
       <Alert alert={alert}/>
       <div className="container my-3">
         <Routes>
